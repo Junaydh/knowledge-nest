@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS resources CASCADE;
+
+CREATE TABLE resources (
+  id SERIAL PRIMARY KEY NOT NULL,
+  owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  resource_url TEXT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  description TEXT DEFAULT '',
+  img_url TEXT DEFAULT NULL
+);
