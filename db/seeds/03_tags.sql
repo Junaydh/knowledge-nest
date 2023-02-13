@@ -1,3 +1,5 @@
+DELETE FROM tags;
+
 INSERT INTO tags (resource_id, name)
 VALUES (1, 'trigonometry');
 INSERT INTO tags (resource_id, name)
