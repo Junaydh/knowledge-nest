@@ -1,4 +1,4 @@
-DELETE FROM likes;
+TRUNCATE likes;
 
 INSERT INTO likes (owner_id, resource_id)
 VALUES (1, 1);

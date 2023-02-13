@@ -1,4 +1,4 @@
-DELETE FROM tags;
+TRUNCATE tags;
 
 INSERT INTO tags (resource_id, name)
 VALUES (1, 'trigonometry');

@@ -1,5 +1,5 @@
 -- Users table seeds here (Example)
-DELETE FROM users;
+TRUNCATE users;
 
 INSERT INTO users (username, first_name, last_name, email, password, profile_pic)
 VALUES ('JohnD', 'John', 'Doe', 'JohnD@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 'https://pub-static.fotor.com/assets/projects/pages/d5bdd0513a0740a8a38752dbc32586d0/fotor-03d1a91a0cec4542927f53c87e0599f6.jpg'),
