@@ -1,4 +1,4 @@
-TRUNCATE comments;
+DELETE FROM comments;
 
 INSERT INTO comments (owner_id, resource_id, comment)
 VALUES (1, 1, 'Owner id 1 commented on resourse id 2');
