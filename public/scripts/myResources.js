@@ -1,5 +1,3 @@
-
-
 $(() => {
   $('#owned-btn').on('click', () => {
     $.ajax({
