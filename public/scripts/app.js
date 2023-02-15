@@ -41,6 +41,7 @@ const renderResources = function(resources) {
 }
 
 const renderTags = function(tags) {
+  console.log(tags);
   for (const tag of tags) {
     let id = tag.resource_id;
     let container = $(`#${id}`);
