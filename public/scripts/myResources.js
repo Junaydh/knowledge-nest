@@ -8,6 +8,12 @@ $(() => {
       const $resourceList = $('#resources-container');
       $resourceList.empty();
 
+      const $ownedBtn = $('#owned-btn');
+      $ownedBtn.removeClass('greyed-out');
+
+      const $likedBtn = $('#liked-btn');
+      $likedBtn.addClass('greyed-out');
+
       console.log('RESPONSE:', response);
 
      for (const resource of response) {
@@ -22,9 +28,14 @@ $(() => {
               <h4>${resource.resource_url}</h4>
               </div>
             </header>
-            <div class="tweet-content">
+
+            <div class="resource-description">
             <span>${resource.description}</span>
             </div>
+
+            <footer class="footer-icons">
+              <span id="icons"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-comment"></i> <i class="fa-solid fa-star"></i></span>
+            </footer>
             </article>`);
         $resourceList.prepend($returnValue);
       }
@@ -45,6 +56,13 @@ $(() => {
     .done((response) => {
       const $resourceList = $('#resources-container');
       $resourceList.empty();
+
+      const $likedBtn = $('#liked-btn');
+      $likedBtn.removeClass('greyed-out');
+
+      const $ownedBtn = $('#owned-btn');
+      $ownedBtn.addClass('greyed-out');
+
       console.log('RESPONSE:', response);
 
     for (const resource of response) {
@@ -59,9 +77,14 @@ $(() => {
               <h4>${resource.resource_url}</h4>
             </div>
           </header>
-            <div class="tweet-content">
+
+            <div class="resource-description">
             <span>${resource.description}</span>
             </div>
+
+          <footer class="footer-icons">
+            <span id="icons"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-comment"></i> <i class="fa-solid fa-star"></i></span>
+          </footer>
             </article>`);
         $resourceList.prepend($returnValue);
       }

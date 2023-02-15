@@ -1,19 +1,28 @@
+body {
+  background-color: #209e00;
+  background-image: url("https://www.transparenttextures.com/patterns/foggy-birds.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */;
+}
+
 #resources-container {
   display: flex;
   gap: 20px;
-
 }
 
 #owned {
   border: solid black;
-  padding:20px;
+  padding: 80px;
   align-items: center;
+  border-radius: 50%/70% 70% 50% 50%;
+  background-color: #F0EAD6;
 }
 
 #liked {
   border: solid black;
-  padding: 10px;
+  padding: 80px;
   align-items: center;
+  border-radius: 50%/70% 70% 50% 50%;
+  background-color: #F0EAD6;
 }
 
 #resource-img img {
@@ -29,6 +38,50 @@
 }
 
 .buttons button {
-  background-color:aqua;
+  padding: 10px;
+  background-color:lightgreen;
   border: solid black;
+}
+
+.buttons button:hover {
+  filter: brightness(130%);
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+}
+
+.greyed-out {
+  opacity: 0.5;
+  color: gray;
+}
+
+
+.footer-icons {
+  padding-top: 20px;
+}
+
+#icons {
+  display: flex;
+  gap: 10px;
+  justify-content: right;
+  width: 100%;
+}
+
+#icons .fa-heart:hover {
+  background-clip: content-box;
+  color: red;
+  filter: drop-shadow(0 0 2px);
+}
+
+#icons .fa-comment:hover {
+  background-clip: content-box;
+  color: green;
+  filter: drop-shadow(0 0 2px);
+}
+
+#icons .fa-star:hover {
+  background-clip: content-box;
+  color: #FFC000;
+  filter: drop-shadow(0 0 2px);
 }
