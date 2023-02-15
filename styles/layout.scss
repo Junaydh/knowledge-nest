@@ -4,3 +4,42 @@ body,
 html {
   margin: 0;
 }
+
+main {
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f1ec;
+  margin: 0 auto;
+}
+
+nav {
+  height: 120px;
+  color: #FFFFFF;
+  background-color:darkcyan;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+}
+
+#logo {
+  height: 80px;
+}
+
+#logo-link {
+  text-decoration: none;
+  color:beige;
+  font-family: 'Bungee Shade', cursive;
+}
+#dropdown {
+  padding-top: 140px;
+}
+
+.resource-listing {
+  display: flex;
+  flex-direction: row;
+}
