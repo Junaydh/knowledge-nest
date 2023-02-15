@@ -32,6 +32,11 @@ app.use(cookieSession({
   maxAge: 60000
 }));
 
+app.use(cookieSession({
+  name: 'session',
+  keys: [process.env.SESSION_SECRET],
+}));
+
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
@@ -41,6 +46,8 @@ const resourcePageApiRoutes = require('./routes/resource-page-api');
 const resourcePageRoutes = require('./routes/resource-page')
 const myResourcesApiRoutes = require('./routes/myResources-api');
 const myResourcesRoutes = require('./routes/myResources')
+const loginRoutes = require('./routes/login');
+const registrationRoutes = require('./routes/registration');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -52,6 +59,8 @@ app.use('/api/egg', resourcePageApiRoutes);
 app.use('/egg', resourcePageRoutes)
 app.use('/api/resources', myResourcesApiRoutes);
 app.use('/myresources', myResourcesRoutes);
+app.use('/login', loginRoutes);
+app.use('/register', registrationRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -71,3 +80,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+module.exports = app;

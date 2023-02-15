@@ -2,7 +2,7 @@ $(() => {
   $('#owned-btn').on('click', () => {
     $.ajax({
       method: 'GET',
-      url: '/api/resources/owned/1'
+      url: `/api/resources/owned/`
     })
     .done((response) => {
       const $resourceList = $('#resources-container');
@@ -24,8 +24,8 @@ $(() => {
                 <img src="${resource.img_url}"></img>
                 <h4>${resource.title}</h4>
               </div>
-              <div id="username">
-              <h4>${resource.resource_url}</h4>
+              <div id="resource-url">
+              <h4><a class="resource-link" href="${resource.resource_url}">Click here to go to link!</a></h4>
               </div>
             </header>
 
@@ -51,7 +51,7 @@ $(() => {
   $('#liked-btn').on('click', () => {
     $.ajax({
       method: 'GET',
-      url: '/api/resources/liked/1'
+      url: `/api/resources/liked/`
     })
     .done((response) => {
       const $resourceList = $('#resources-container');
@@ -73,8 +73,8 @@ $(() => {
               <img src="${resource.img_url}"></img>
             </div>
             <h4>${resource.title}</h4>
-            <div id="username">
-              <h4>${resource.resource_url}</h4>
+            <div id="resource-url">
+            <h4><a class="resource-link" href="${resource.resource_url}">Click here to go to link!</a></h4>
             </div>
           </header>
 

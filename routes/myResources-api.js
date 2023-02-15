@@ -3,8 +3,8 @@ const router  = express.Router();
 const myResourcesQueries = require('../db/queries/myResources');
 
 
-router.get('/owned/1', (req, res) => {
-  const userId = 1;
+router.get('/owned', (req, res) => {
+  const userId = req.session.userId;
   myResourcesQueries.myOwnedResources(userId)
     .then(ownedResources => {
       res.send(ownedResources)
@@ -16,8 +16,8 @@ router.get('/owned/1', (req, res) => {
     });
 });
 
-router.get('/liked/1', (req, res) => {
-  const userId = 1;
+router.get('/liked', (req, res) => {
+  const userId = req.session.userId;
   myResourcesQueries.myLikedResources(userId)
     .then(likedResources => {
       res.send(likedResources)

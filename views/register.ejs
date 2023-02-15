@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Register</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/register.css" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/users.js"></script>
+</head>
+
+<body>
+<div id="registration-form">
+  <h2>Create Account</h2>
+  <form method="POST" action="/register">
+
+  <label>User Name:</label>
+  <input
+    type="username"
+    name="username"
+    required
+    />
+  <label>First Name:</label>
+  <input
+    name="firstName"
+    required
+    />
+    <label>Last Name:</label>
+    <input
+      name="lastName"
+      required
+      />
+  <label>Email Address:</label>
+  <input
+    type="email"
+    name="email"
+    required
+    />
+  <label>Password:</label>
+  <input
+    type="password"
+    name="password"
+    required
+    />
+  <label>Profile Picture URL:</label>
+  <input
+  name="picture"
+  placeholder="Enter the URL of your desired profile picture"
+    required
+    />
+    <button type="submit">Register</button>
+  </form>
+</div>
+</body>
+
+</html>
