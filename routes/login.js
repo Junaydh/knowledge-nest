@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
       if (!bcrypt.compareSync(password, user.password)) {
         return res.send('<html><body><h1>Error</h1><p>Error: The password provided does not match.</p></body></html>');
       } else if (bcrypt.compareSync(password, user.password)) {
-        req.session.user = user;
+        req.session.userId = user.id;
         res.redirect('/');
       }
     })
