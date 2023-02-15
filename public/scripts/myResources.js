@@ -2,7 +2,7 @@ $(() => {
   $('#owned-btn').on('click', () => {
     $.ajax({
       method: 'GET',
-      url: `/api/resources/owned/`
+      url: `/api/myresources/owned/`
     })
     .done((response) => {
       const $resourceList = $('#resources-container');
@@ -51,7 +51,7 @@ $(() => {
   $('#liked-btn').on('click', () => {
     $.ajax({
       method: 'GET',
-      url: `/api/resources/liked/`
+      url: `/api/myresources/liked/`
     })
     .done((response) => {
       const $resourceList = $('#resources-container');

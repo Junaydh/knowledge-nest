@@ -48,7 +48,7 @@ const registrationRoutes = require('./routes/registration');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/api/resources', myResourcesApiRoutes);
+app.use('/api/myresources', myResourcesApiRoutes);
 app.use('/myresources', myResourcesRoutes);
 app.use('/login', loginRoutes);
 app.use('/register', registrationRoutes);
