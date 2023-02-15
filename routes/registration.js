@@ -13,11 +13,7 @@ router.post('/', (req, res) => {
   registerQueries.checkExistingUser(username, email)
     .then((exists) => {
       if (exists) {
-        return res
-          .status(400)
-          .send(
-            '<html><body><h1>Error</h1><p>Error: That email or username is already in use. Please choose a different one.</p></body></html>'
-          );
+        return res.send('<html><body><h1>Error</h1><p>Error: That email or username is already in use. Please choose a different one.</p></body></html>');
       }
 
       const hashedPassword = bcrypt.hashSync(password, 10);
