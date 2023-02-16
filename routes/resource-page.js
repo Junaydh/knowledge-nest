@@ -8,6 +8,7 @@
     const express = require('express');
     const router  = express.Router();
     const resourceQueries = require('../db/queries/user-resources');
+    
     router.get('/:resourceID', (req, res) => {
       const resourceID = req.params.resourceID;
       resourceQueries.getUserResource(resourceID)

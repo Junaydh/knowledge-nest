@@ -1,10 +1,76 @@
 // Client facing scripts here
 
+$(() => {
+  var n = window.location.pathname.lastIndexOf('/');
+  var result = window.location.pathname.substring(n + 1);
+
+  $.ajax({
+    method: 'GET',
+    url: '/api/resources/' + result + '/comments'
+  })
+  .done((response) => {
+    const $commentList = $('#comments-container');
+    $commentList.empty();
+
+    console.log('RESPONSE:', response);
+
+    for (const comment of response) {
+      console.log(comment)
+      let $comment = $(`
+      <article class="comment">
+        <header class="comment-header">
+          <div class="user-profile">
+            <img class="profile-picture" src="${comment.profile_pic}"></img>
+            <h4 class="user-username">${comment.username}</h4>
+          </div>
+        </header>
+        <div class="comment-text">
+          ${comment.text}
+        </div>
+        <footer class="comment-footer">
+          <span class="comment-date">${timeago.format(comment.created_at)}</span>
+        </footer>
+      </article>`);
+      $commentList.prepend($comment);
+
+    }
+  })
+  .catch(err => {
+    console.log("AJAX FAILED")
+    console.error(err);
+    res.send(err);
+  });
+
+});
+
+      // const $returnValue =
+      //   $(`<article id="owned">
+      //     <header class="owned-resources">
+      //       <div id="resource-img">
+      //         <img src="${resource.img_url}"></img>
+      //         <h4>${resource.title}</h4>
+      //       </div>
+      //       <div id="resource-url">
+      //       <h4><a class="resource-link" href="${resource.resource_url}">Click here to go to link!</a></h4>
+      //       </div>
+      //     </header>
+
+      //     <div class="resource-description">
+      //     <span>${resource.description}</span>
+      //     </div>
+
+      //     <footer class="footer-icons">
+      //       <span id="icons"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-comment"></i> <i class="fa-solid fa-star"></i></span>
+      //     </footer>
+      //     </article>`);
+      // $resourceList.prepend($returnValue);
+
+
 // $(() => {
 
-//   //renders existing tweets using ajax promise
+//   //renders existing comments using ajax promise
 //   const loadComments = function () {
-//     $.ajax("/egg/:resourceID").then(function (comment) {
+//     $.ajax("/").then(function (comment) {
 //       renderComments(comment);
 //     });
 //   };
@@ -15,19 +81,67 @@
 //   const renderComments = function (comments) {
 //     $("#comments-container").empty();
 //     for (const item of comments) {
-//       const commentElement = createTweetElement(item);
+//       const commentElement = createCommentElement(item);
 //       $("#comments-container").prepend(commentElement);
 //     }
 //   };
 
-// })
+//   const escape = function(str) {
+//     let div = document.createElement("div");
+//     div.appendChild(document.createTextNode(str));
+//     return div.innerHTML;
+//   };
 
+//   loadComments();
+//   $(".text-error").hide();
 
+//   const createCommentElement = function(comment) {
+//     let $comment = $(`
+//       <article class="comment">
+//         <header class="comment-header">
+//           <div class="user-profile">
+//             <img class="profile-picture" src="${comment.user.profile_picture}"></img>
+//             <h4 class="user-username">${comment.user.username}</h4>
+//           </div>
+//         </header>
+//         <div class="comment-text">
+//           ${escape(comment.content.text)}
+//         </div>
+//         <footer class="comment-footer">
+//           <span class="comment-date">${timeago.format(comment.created_at)}</span>
+//         </footer>
+//       </article>`);
+//     return $comment;
+//   };
 
+  // $("#new-comment-form").submit(function(event) {
+  //   event.preventDefault();
+  //   const $textLength = $(this).find("#comment-text").val().length;
 
+  //   //checks for an error and sends commands to summon and error message
+  //   if (!$textLength) {
+  //     $(".text-error").text("Your comment is too short!");
+  //     $(".text-error").slideDown("slow");
+  //     $(".text-error").delay(2500).slideUp("slow");
+  //   } else if ($textLength > 140) {
+  //     $(".text-error").text("Your comment is too long!");
+  //     $(".text-error").slideDown("slow");
+  //     $(".text-error").delay(2500).slideUp("slow");
+  //   } else { //ajax promise fetches comments
+  //     $.ajax("/egg/:resourceID", {
+  //       method: "POST",
+  //       data: $(this).serialize(),
+  //     }).then(() => {
+  //       loadComment();
+  //       $("#comment-text").val("");
+  //       $(".counter").text(140);
+  //     });
+  //   }
+  // });
 
+//});
 
-
+//=================
 
 //
 // $(() => {
