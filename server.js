@@ -37,6 +37,8 @@ app.use(cookieSession({
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const myResourcesApiRoutes = require('./routes/myResources-api');
+const myResourcesRoutes = require('./routes/myResources')
 const loginRoutes = require('./routes/login');
 const registrationRoutes = require('./routes/registration');
 const resourceApiRoutes = require('./routes/resources-api');
@@ -49,6 +51,8 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 app.use('/api/resources', resourceApiRoutes);
 app.use('/api/tags', tagApiRoutes);
+app.use('/api/myresources', myResourcesApiRoutes);
+app.use('/myresources', myResourcesRoutes);
 app.use('/login', loginRoutes);
 app.use('/register', registrationRoutes);
 // Note: mount other resources here, using the same pattern above
@@ -64,3 +68,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+module.exports = app;
