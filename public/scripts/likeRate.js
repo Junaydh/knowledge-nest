@@ -1,8 +1,7 @@
 $(document).ready(function(e){
-
   $('#main-container').on('click','.fa-heart', function(e){
     const $resource = $(this).closest('.resource-container');
-    const resourceId = $resource.find('#resource-id').text();
+    const resourceId = $resource.find('.resource-tag-container').attr('id');
     console.log('RESOURCE ID:', resourceId);
 
     $.ajax({
@@ -20,7 +19,7 @@ $(document).ready(function(e){
 
   $('#main-container').on('click','#star1', function(e){
     const $resource = $(this).closest('.resource-container');
-    const resourceId = $resource.find('#resource-id').text();
+    const resourceId = $resource.find('.resource-tag-container').attr('id');
 
     $.ajax({
       method: 'POST',
@@ -39,7 +38,7 @@ $(document).ready(function(e){
 
 $('#main-container').on('click','#star2', function(e){
   const $resource = $(this).closest('.resource-container');
-  const resourceId = $resource.find('#resource-id').text();
+  const resourceId = $resource.find('.resource-tag-container').attr('id');
 
   $.ajax({
     method: 'POST',
@@ -56,7 +55,7 @@ $('#main-container').on('click','#star2', function(e){
 
 $('#main-container').on('click','#star3', function(e){
   const $resource = $(this).closest('.resource-container');
-  const resourceId = $resource.find('#resource-id').text();
+  const resourceId = $resource.find('.resource-tag-container').attr('id');
 
   $.ajax({
     method: 'POST',
@@ -74,7 +73,7 @@ $('#main-container').on('click','#star3', function(e){
 
 $('#main-container').on('click','#star4', function(e){
   const $resource = $(this).closest('.resource-container');
-  const resourceId = $resource.find('#resource-id').text();
+  const resourceId = $resource.find('.resource-tag-container').attr('id');
 
   $.ajax({
     method: 'POST',
@@ -92,7 +91,7 @@ $('#main-container').on('click','#star4', function(e){
 
 $('#main-container').on('click','#star5', function(e){
   const $resource = $(this).closest('.resource-container');
-  const resourceId = $resource.find('#resource-id').text();
+  const resourceId = $resource.find('.resource-tag-container').attr('id');
 
   $.ajax({
     method: 'POST',
