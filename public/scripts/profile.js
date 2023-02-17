@@ -14,25 +14,28 @@ $(() => {
               <div id="profile-info">
                 <h2>Profile Information</h2>
                 <label>Username: </label>
-                <input type="text" name="username" value="${response.username}" required>
+                <input type="text" name="username" id="username" value="${response.username}" required>
                 <label>First Name: </label>
-                <input type="text" name="firstName" value="${response.first_name}" required>
+                <input type="text" name="firstName" id="firstName" value="${response.first_name}" required>
                 <label>Last Name: </label>
-                <input type="text" name="lastName" value="${response.last_name}" required>
+                <input type="text" name="lastName" id="lastName" value="${response.last_name}" required>
                 <label>Email: </label>
-                <input type="email" name="email" value="${response.email}" required>
+                <input type="email" name="email" id="email" value="${response.email}" required>
               </div>
 
               <div id="aboutme-profile_pic">
                 <img src=${response.profile_pic}>
                 <label>Profile Picture URL: </label>
-                <input type="text" name="profilePic" value="${response.profile_pic}" required>
+                <input type="text" name="profilePic" id="profilePic" value="${response.profile_pic}" required>
 
               </div>
 
             </div>
-            <button method="POST" action="/profile" type="submit">Update Profile</button>
+            <button type="submit">Update Profile</button>
           </form`);
+
+
+    $profileContainer.append($returnValue);
 
 
 
@@ -41,11 +44,11 @@ $(() => {
 
 
       const formData = {
-        username: $('[name="username"]').val(),
-        firstName: $('[name="firstName"]').val(),
-        lastName: $('[name="lastName"]').val(),
-        email: $('[name="email"]').val(),
-        profilePic: $('[name="profilePic"]').val(),
+        username: $('#username').val(),
+        firstName: $('#firstName').val(),
+        lastName: $('#lastName').val(),
+        email: $('#email').val(),
+        profilePic: $('#profilePic').val(),
       };
 
 
@@ -55,8 +58,38 @@ $(() => {
         data: formData
       })
       .done((response) => {
-        console.log(response);
         alert('Profile updated successfully!');
+        $returnValue.empty();
+
+        const $returnUpdatedValue =
+          $(`<form id="edit-profile-form">
+            <h1>Welcome to your Profile Page, ${response.username}!</h1>
+            <div id="full-profile">
+
+              <div id="profile-info">
+                <h2>Profile Information</h2>
+                <label>Username: </label>
+                <input type="text" name="username" id="username" value="${response.username}" required>
+                <label>First Name: </label>
+                <input type="text" name="firstName" id="firstName" value="${response.first_name}" required>
+                <label>Last Name: </label>
+                <input type="text" name="lastName" id="lastName" value="${response.last_name}" required>
+                <label>Email: </label>
+                <input type="email" name="email" id="email" value="${response.email}" required>
+              </div>
+
+              <div id="aboutme-profile_pic">
+                <img src=${response.profile_pic}>
+                <label>Profile Picture URL: </label>
+                <input type="text" name="profilePic" id="profilePic" value="${response.profile_pic}" required>
+
+              </div>
+
+            </div>
+            <button type="submit">Update Profile</button>
+          </form`);
+
+          $profileContainer.append($returnUpdatedValue);
       })
       .fail((err) => {
         console.error(err.message);
@@ -64,7 +97,6 @@ $(() => {
       });
     });
 
-    $profileContainer.append($returnValue);
   })
   .catch((err) => {
     console.error(err.message);
