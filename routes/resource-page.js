@@ -31,7 +31,7 @@
 
       const resourceID = req.params.resourceID;
       const text = req.body.text;
-      const userID = req.session.user_id;
+      const userID = req.session.userId;
       console.log("post req.session: ", req.session)
       if (!text) {
         res.status(400).json({ error: 'invalid request: no data in POST body'});
