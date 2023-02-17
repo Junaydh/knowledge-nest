@@ -2,6 +2,16 @@ const express = require('express');
 const router  = express.Router();
 const likeRatingApiQueries = require('../db/queries/likeRate');
 
+router.get('/', (req, res) => {
+  likeRatingApiQueries.countLikes()
+  .then(rows => {
+    res.json(rows);
+  })
+  .catch (err => {
+    console.error(err.message);
+  })
+})
+
 router.post('/like', (req, res) => {
   const userId = req.session.userId;
   const resourceId = req.body.resourceId;

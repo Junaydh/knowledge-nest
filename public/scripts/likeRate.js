@@ -9,13 +9,28 @@ $(document).ready(function(e){
       url: '/api/likesratings/like',
       data: {resourceId: resourceId},
       success: function(result){
-        console.log(result);
+        // handle success case
       },
       error: function(err){
-
+        console.error(err);
       }
     })
+    .done(function() {
+      $.ajax({
+        method: 'GET',
+        url: '/api/likesratings',
+        success:function(res) {
+          console.log('GETTING', res)
+          const likeCount = res;
+          $resource.find('#total-likes').text(likeCount);
+        }
+      })
+    })
+    .fail(function() {
+      console.error('Error adding like');
+    });
   });
+
 
   $('#main-container').on('click','#star1', function(e){
     const $resource = $(this).closest('.resource-container');

@@ -1,5 +1,19 @@
 const db = require('../connection');
 
+const countLikes = () => {
+  const queryString = `SELECT COUNT(likes.*)
+  FROM likes;`
+
+  return db
+  .query(queryString)
+  .then((data) => {
+    return data.rows[0].count;
+  })
+  .catch((err) => {
+    console.error(err.message);
+  });
+};
+
 const likeResource = (userId, resourceId) => {
   const queryString = `INSERT INTO likes (owner_id, resource_id)
   VALUES ($1, $2)`;
@@ -124,4 +138,4 @@ const rateResource5 = (resourceId) => {
 }
 
 
-module.exports = { likeResource, checkIfLiked, unlikeResource, rateResource1, rateResource2, rateResource3, rateResource4, rateResource5 };
+module.exports = { countLikes, likeResource, checkIfLiked, unlikeResource, rateResource1, rateResource2, rateResource3, rateResource4, rateResource5 };
