@@ -37,27 +37,59 @@ app.use(cookieSession({
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const resourcePageApiRoutes = require('./routes/resource-page-api');
+const resourcePageRoutes = require('./routes/resource-page')
+const myResourcesApiRoutes = require('./routes/myResources-api');
+const myResourcesRoutes = require('./routes/myResources')
 const loginRoutes = require('./routes/login');
 const registrationRoutes = require('./routes/registration');
-
+const resourceApiRoutes = require('./routes/resources-api');
+const tagApiRoutes = require('./routes/tags-api');
+const profileApiRoutes = require ('./routes/profile-api');
+const profileRoutes = require('./routes/profile');
+const addResourceRoutes = require('./routes/addResource');
+const likeRateApiRoutes = require('./routes/likeRate-api');
+const searchRoutes = require('./routes/search');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/api/egg', resourcePageApiRoutes);
+app.use('/egg', resourcePageRoutes)
+// app.use('/api/resources', myResourcesApiRoutes);
+app.use('/myresources', myResourcesRoutes);
+app.use('/api/tags', tagApiRoutes);
+app.use('/api/resources', resourceApiRoutes);
+app.use('/api/tags', tagApiRoutes);
+app.use('/api/myresources', myResourcesApiRoutes);
 app.use('/login', loginRoutes);
 app.use('/register', registrationRoutes);
+app.use('/api/profile', profileApiRoutes)
+app.use('/profile', profileRoutes);
+app.use('/add-resource', addResourceRoutes);
+app.use ('/api/likesratings', likeRateApiRoutes);
+app.use('/search', searchRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+app.get('/login/:id', (req, res) => {
+  //console.log(req.params.id)
+  req.session.user_id = req.params.id;
+  res.redirect('/');
+ });
+
 app.get('/', (req, res) => {
+  console.log("Session:", req.session)
   res.render('index');
 });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+module.exports = app;

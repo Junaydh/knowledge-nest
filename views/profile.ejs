@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Login</title>
+  <title>My Eggs</title>
 
   <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -16,34 +16,19 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/resources.css" />
-  <link rel="stylesheet" href="/styles/register.css" />
+  <link rel="stylesheet" href="/styles/profile.css" />
 
+  <!-- FONT AWESOME LIBRARY -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/users.js"></script>
+  <script defer src="/scripts/profile.js"></script>
 </head>
 
 <body>
   <%- include('partials/_nav') %>
-<div id="registration-form">
-  <h2>Login</h2>
-  <form method="POST" action="/login">
-  <label>Email Address:</label>
-  <input
-    type="email"
-    name="email"
-    required
-    />
-  <label>Password:</label>
-  <input
-    type="password"
-    name="password"
-    required
-    />
-    <button type="submit">Login</button>
-  </form>
-</div>
+  <div id="profile-container">
+  </div>
 </body>
 
 </html>

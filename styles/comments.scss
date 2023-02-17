@@ -1,0 +1,68 @@
+*
+{
+  margin: 0px;
+  padding: 0pxs;
+}
+
+a img{
+  border: none;
+}
+
+.comment {
+  border: 3px solid black;
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: none;
+  background-color: #F0EAD6;
+}
+
+.comment-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.user-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  max-width: 500px;
+  height: auto;
+  border-radius: 5%;
+  padding: 5px;
+}
+
+.profile-picture {
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 75px;
+  max-height: 75px;
+  height: auto;
+  width: auto;
+}
+
+.comment-text {
+  font-size: 18px;
+  padding: 10px;
+
+}
+
+.comment-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top-style: solid;
+  border-width: 3px;
+  padding-top: 20px;
+  font-size: 18px;
+}
+
+#comment-post-text {
+width: 100%;
+resize: none;
+
+}

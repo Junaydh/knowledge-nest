@@ -33,11 +33,14 @@ router.post('/', (req, res) => {
           console.log('RESULTS ID:', result.id);
           const userId = result.id;
           req.session.userId = userId; // set the session cookie
-          res.redirect('/users');
+          res.redirect('/login');
         })
         .catch((err) => {
           console.error('ERROR:', err.message);
         });
+    })
+    .catch((err) => {
+      console.error('ERROR:', err.message);
     });
 })
 
