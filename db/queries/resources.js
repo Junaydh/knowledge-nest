@@ -6,7 +6,6 @@ const getResources = () => {
   GROUP BY resources.id LIMIT 10;
   `)
     .then(data => {
-      console.log(data);
       return data.rows;
     })
 };

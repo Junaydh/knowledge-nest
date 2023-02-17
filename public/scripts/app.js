@@ -67,11 +67,4 @@ const fetchTags = function() {
 
 $(document).ready(() => {
   fetchResources();
-
-  $('.submit_on_enter').keydown(function(event) {
-    if (event.keyCode == 13) {
-      this.form.submit();
-      return false;
-    }
-  });
 })
