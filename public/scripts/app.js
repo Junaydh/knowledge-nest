@@ -13,12 +13,25 @@ const createResourceElement = function(data) {
       <section class="resource-details">
         <header>
           <a class="resource-link" href="${data.resource_url}">Click here to go to link!</a>
-          <div class="resource-rating">${Math.round(data.avg_rating)}/5</div>
+          <span id="resource-id">${data.id}</span>
         </header>
         <h3 class="resource-title"><a href="/egg/${data.id}">${data.title}</a></h3>
         <div class="resource-description">description</div>
         <footer>
           <div class="resource-tag-container" id="${data.id}">
+          </div>
+          <div id="icons">
+          <span>${data.total_likes}<i class="fa-solid fa-heart"></i> <i class="fa-solid fa-comment"></i></span>
+
+          <div class="resource-rating">${Math.round(data.avg_rating)}/5
+            <span> Rate:
+                  <i id="star1" class="fa-solid fa-star"></i>
+                  <i id="star2"class="fa-solid fa-star"></i>
+                  <i id="star3"class="fa-solid fa-star"></i>
+                  <i id="star4"class="fa-solid fa-star"></i>
+                  <i id="star5"class="fa-solid fa-star"></i>
+            </span>
+          </div>
           </div>
         </footer>
       </section>

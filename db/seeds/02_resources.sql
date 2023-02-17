@@ -2,8 +2,9 @@
 DELETE FROM resources;
 
 INSERT INTO resources (owner_id, resource_url, title, description, img_url)
-VALUES (1, 'https://picsum.photos/200/300', 'Trigonometry Advanced', 'description description description', 'https://picsum.photos/200/300');
+VALUES (1, 'https://cooking.nytimes.com/guides/1-how-to-make-pizza', 'How to Make Pizza', 'You can make pizza at home. In fact, you can make pizza that will equal some of the best on the planet. With planning and practice, you can become good at it — even if you are a relatively novice cook. We are here to help that happen.', 'https://www.simplyrecipes.com/thmb/pjYMLcsKHkr8D8tYixmaFNxppPw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-3-8f256746d649404baa36a44d271329bc.jpg');
 INSERT INTO resources (owner_id, resource_url, title, description, img_url)
-VALUES (2, 'https://picsum.photos/200/300', 'History of Chimpanzees', 'description description description', 'https://picsum.photos/200/300');
+VALUES (2, 'https://www.womenshealthmag.com/fitness/a19918535/how-to-do-a-handstand/', 'How to Do a Handstand', 'You’re probably used to seeing handstands and handstand variations (think: handstand shoulder taps #casual) in your TikTok feed by now. Learning how to do a handstand is not only an impressive party trick—it will score you heaps of mental and physical bennies, too.', 'https://media1.popsugar-assets.com/files/thumbor/znO3qdonCzjNu7BQNVdLBNlzTn0/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/10/31/649/n/1922729/84005cd0581756accefb01.88164494_edit_img_image_7676437_1453065000/i/Learn-How-Do-Handstand.jpg');
 INSERT INTO resources (owner_id, resource_url, title, description, img_url)
-VALUES (3, 'https://picsum.photos/200/300', 'How To Make Cereal', 'description description description', 'https://picsum.photos/200/300');
+VALUES (3, 'https://www.longfield-gardens.com/article/how-to-water-your-plants', 'How to Water Plants', 'Anyone can pour water on a plant. But it takes time and experience to understand how plants use water and the many variables that come into play. These include the type of plant, its size, the soil texture, recent weather, sun exposure, time of day and time of year. In short, watering your garden shouldn''t be a rote task. The amount of water a plant requires is constantly changing, so you need to be paying attention.', 'https://cdn11.bigcommerce.com/s-1b9100svju/product_images/uploaded_images/ad-options-articles-84-.jpg');
+

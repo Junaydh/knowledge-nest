@@ -1,0 +1,29 @@
+.resource-preview-image img{
+  max-width: 500px;
+  height: auto;
+}
+
+#icons {
+  display: flex;
+  gap: 10px;
+  justify-content: right;
+  width: 100%;
+}
+
+#icons .fa-heart:hover {
+  background-clip: content-box;
+  color: red;
+  filter: drop-shadow(0 0 2px);
+}
+
+#icons .fa-comment:hover {
+  background-clip: content-box;
+  color: green;
+  filter: drop-shadow(0 0 2px);
+}
+
+#icons .fa-star:hover {
+  background-clip: content-box;
+  color: #FFC000;
+  filter: drop-shadow(0 0 2px);
+}
