@@ -1,5 +1,3 @@
-// Client facing scripts here
-
 const createResourceElement = function(data) {
   if (!data.average_rating) {
     data.average_rating = 'None';
@@ -11,26 +9,14 @@ const createResourceElement = function(data) {
         <img src="${data.img_url}">
       </section>
       <section class="resource-details">
-        <header class="article-header">
+        <header>
           <a class="resource-link" href="${data.resource_url}">Click here to go to link!</a>
+          <div class="resource-rating">${Math.round(data.avg_rating)}/5</div>
         </header>
         <h3 class="resource-title"><a href="/egg/${data.id}">${data.title}</a></h3>
-        <div class="resource-description">${data.description}</div>
+        <div class="resource-description">description</div>
         <footer>
           <div class="resource-tag-container" id="${data.id}">
-          </div>
-          <div id="icons">
-          <span><span id="total-likes">${data.total_likes} </span>   <i class="fa-solid fa-heart"></i></span>
-
-          <div class="resource-rating">${Math.round(data.avg_rating)} / 5
-            <span>  Rate:
-                  <i id="star1" class="fa-solid fa-star"></i>
-                  <i id="star2"class="fa-solid fa-star"></i>
-                  <i id="star3"class="fa-solid fa-star"></i>
-                  <i id="star4"class="fa-solid fa-star"></i>
-                  <i id="star5"class="fa-solid fa-star"></i>
-            </span>
-          </div>
           </div>
         </footer>
       </section>
@@ -64,11 +50,10 @@ const renderTags = function(tags) {
   }
 }
 
-const fetchResources = function() {
-  $.getJSON('/api/resources', (data) => {
-    renderResources(data);
-    fetchTags();
-  })
+const fetchResources = function(data) {
+  console.log(data);
+  renderResources(data);
+  fetchTags();
 }
 
 const fetchTags = function() {
@@ -78,12 +63,5 @@ const fetchTags = function() {
 }
 
 $(document).ready(() => {
-  fetchResources();
-
-  $('#form-container').hide();
-
-  $('#dropdown').on('click', function() {
-    $('#form-container').slideToggle();
-    });
-
+  fetchTags();
 })

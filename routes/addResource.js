@@ -20,8 +20,7 @@ router.post('/', (req, res) => {
     postData.resource_id = result;
 
     addTag(postData)
-      .then((res) => {
-        console.log('new tag added:', res)
+      .then((query) => {
         res.redirect('/');
       })
       .catch((err) => {
@@ -30,8 +29,8 @@ router.post('/', (req, res) => {
   })
   .catch((err) => {
     console.error('Error:', err.message);
+    res.status(500).send("One or multiple fields empty! Please make sure all fields are filled before submitting!");
   })
-
 })
 
 module.exports = router;
