@@ -20,7 +20,7 @@ const createResourceElement = function(data) {
           <div class="resource-tag-container" id="${data.id}">
           </div>
           <div id="icons">
-          <span>${data.total_likes}    <i class="fa-solid fa-heart"></i> <i class="fa-solid fa-comment"></i></span>
+          <span><span id="total-likes">${data.total_likes} </span>   <i class="fa-solid fa-heart"></i></span>
 
           <div class="resource-rating">${Math.round(data.avg_rating)} / 5
             <span>  Rate:
@@ -79,6 +79,8 @@ const fetchTags = function() {
 
 $(document).ready(() => {
   fetchResources();
+
+  $('#form-container').hide();
 
   $('#dropdown').on('click', function() {
     $('#form-container').slideToggle();

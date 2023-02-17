@@ -1,3 +1,7 @@
+// body {
+//   padding-top: 50px;
+// }
+
 .heading1 {
   border: solid black;
   background-color: #6f2da8;
@@ -15,18 +19,28 @@
   align-items: center;
   border-radius: 50%/70% 70% 50% 50%;
   background-color: #F0EAD6;
+  width: 600px;
+  display: flex; /* add this to make it a flex container */
+  flex-direction: column; /* add this to stack the image and description vertically */
+  justify-content: center; /* add this to center the image and description vertically */
 }
 
-#resource-img img {
-  width: 100%;
+.myresource img {
+  max-width: 300px; /* add this to make the image responsive */
+  height: auto; /* add this to maintain aspect ratio */
 }
 
+.resource-description {
+  max-width: 400px;
+  margin-top: 20px; /* add this to create space between the image and the description */
+}
 
 .buttons {
   width: 20%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
+  margin-top: 50px;
 }
 
 .buttons button {
@@ -48,9 +62,12 @@
   color: gray;
 }
 
-
 .footer-icons {
   padding-top: 20px;
+}
+
+a {
+  text-decoration: none;
 }
 
 #icons {
@@ -58,6 +75,7 @@
   gap: 10px;
   justify-content: right;
   width: 100%;
+  cursor: pointer;
 }
 
 #icons .fa-heart:hover {

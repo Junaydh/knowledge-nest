@@ -9,7 +9,7 @@ $(document).ready(function(e){
       url: '/api/likesratings/like',
       data: {resourceId: resourceId},
       success: function(result){
-
+        console.log(result);
       },
       error: function(err){
 

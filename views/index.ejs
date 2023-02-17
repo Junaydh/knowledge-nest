@@ -27,9 +27,10 @@
 </head>
 <body>
   <%- include('partials/_nav') %>
-  <div id="dropdown">dropdown icon</div>
+  <div id="dropdown"><h3>Create New Resource <i class="fa-solid fa-plus"></i></div>
   <div id="form-container">
     <form method="post" action="/add-resource" id="resource-form">
+      <div id="form-labels">
       <label for="title">Title: </label>
       <input
        type="text"
@@ -54,7 +55,8 @@
        type="text"
        name="tag"
       >
-      <button type="submit">Submit!</button>
+    </div>
+      <button type="submit" id="form-btn">Submit!</button>
     </form>
   </div>
   <main id="main-container">

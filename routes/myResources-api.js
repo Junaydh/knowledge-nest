@@ -21,7 +21,6 @@ router.get('/liked', (req, res) => {
   myResourcesQueries.myLikedResources(userId)
     .then(likedResources => {
       res.send(likedResources)
-      // res.render('myResources', likedResources);
     })
     .catch(err => {
       console.error(err);

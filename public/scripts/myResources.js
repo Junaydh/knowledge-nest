@@ -66,24 +66,22 @@ $(() => {
       for (const resource of response) {
         const $returnValue =
           $(`<article class="myresource">
-            <header class="owned-resources">
+          <header class="owned-resources">
             <div id="resource-img">
-              <img src="${resource.img_url}"></img>
+              <img src="${resource.img_url}">
             </div>
-            <h4>${resource.title}</h4>
             <div id="resource-url">
-            <h4><a class="resource-link" href="${resource.resource_url}">Go to page</a></h4>
+              <h4><a class="resource-link" href="${resource.resource_url}">Go to page</a></h4>
             </div>
           </header>
-
-            <div class="resource-description">
+          <a href="/egg/${resource.id}"><h3 class="resource-title">${resource.title}</h3></a>
+          <div class="resource-description">
             <span>${resource.description}</span>
-            </div>
-
+          </div>
           <footer class="footer-icons">
-            <span id="icons"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-comment"></i> <i class="fa-solid fa-star"></i></span>
+            <span id="icons"><i class="fa-solid fa-heart"></i> <i class="fa-solid fa-star"></i></span>
           </footer>
-            </article>`);
+        </article>`);
         $resourceList.prepend($returnValue);
       }
     })
