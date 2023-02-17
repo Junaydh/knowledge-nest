@@ -51,6 +51,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="/scripts/resource-comments.js"></script>
   <script src="/scripts/likeRate.js"></script>
+  <script src="/scripts/search.js"></script>
 
 </head>
 <body>
@@ -70,17 +71,23 @@
           <img src="<%= resource.img_url %>">
         </section>
         <section class="resource-details">
-          <header>
+          <header class="article-header">
             <a class="resource-link" href="<%= resource.resource_url %>">Click here to go to link!</a>
-            <div class="resource-rating"><%= resource.avg_rating %>/5</div>
+            <div class="resource-rating"><% for (let i = 1; i <= resource.avg_rating; i++) { %>
+              <i class="fa-solid fa-star"></i>
+                <% if (i + 1 > resource.avg_rating) { %>
+                     <%= i %>/5
+                <% } %>
+              <% } %>
+            </div>
           </header>
           <h3 class="resource-title"><a href="/egg/<%= resource.id %>"><%= resource.title %></a></h3>
           <div class="resource-description"><%= resource.description %></div>
           <footer>
-            <div id="icons">
-              <span><%= resource.total_likes %><i class="fa-solid fa-heart"></i></span>
-            </div>
             <div class="resource-tag-container" id="<%= resource.id %>">
+            </div>
+            <div id="icons">
+              <span><%= resource.total_likes %>    <i class="fa-solid fa-heart"></i></span>
             </div>
           </footer>
         </section>
