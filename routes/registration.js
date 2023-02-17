@@ -38,6 +38,9 @@ router.post('/', (req, res) => {
         .catch((err) => {
           console.error('ERROR:', err.message);
         });
+    })
+    .catch((err) => {
+      console.error('ERROR:', err.message);
     });
 })
 

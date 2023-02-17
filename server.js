@@ -37,6 +37,8 @@ app.use(cookieSession({
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const resourcePageApiRoutes = require('./routes/resource-page-api');
+const resourcePageRoutes = require('./routes/resource-page')
 const myResourcesApiRoutes = require('./routes/myResources-api');
 const myResourcesRoutes = require('./routes/myResources')
 const loginRoutes = require('./routes/login');
@@ -54,10 +56,14 @@ const searchRoutes = require('./routes/search');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/api/egg', resourcePageApiRoutes);
+app.use('/egg', resourcePageRoutes)
+// app.use('/api/resources', myResourcesApiRoutes);
+app.use('/myresources', myResourcesRoutes);
+app.use('/api/tags', tagApiRoutes);
 app.use('/api/resources', resourceApiRoutes);
 app.use('/api/tags', tagApiRoutes);
 app.use('/api/myresources', myResourcesApiRoutes);
-app.use('/myresources', myResourcesRoutes);
 app.use('/login', loginRoutes);
 app.use('/register', registrationRoutes);
 app.use('/api/profile', profileApiRoutes)
@@ -71,7 +77,14 @@ app.use('/search', searchRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
+app.get('/login/:id', (req, res) => {
+  //console.log(req.params.id)
+  req.session.user_id = req.params.id;
+  res.redirect('/');
+ });
+
 app.get('/', (req, res) => {
+  console.log("Session:", req.session)
   res.render('index');
 });
 
