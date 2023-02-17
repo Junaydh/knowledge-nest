@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
@@ -23,14 +24,15 @@
     <span><img id="logo" src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"></span>
     <a id="logo-link" href="/"><h1>Knowledge Nest</h1></a>
     <div id="search">
-      <form method="POST" action="/search">
-        <input class="submit_on_enter" type="text" name="q" placeholder="Search...">
+      <form method="POST" action="/search" id="search-form">
+        <button type="submit"><i class="fa fa-magnifying-glass"></i></button>
+        <input type="text" name="search" placeholder="Search...">
       </form>
     </div>
   </nav>
   <div id="dropdown">dropdown icon</div>
   <div id="form-container">
-    <form method="post" action="/add-resource" id="form">
+    <form method="post" action="/add-resource" id="resource-form">
       <label for="title">Title: </label>
       <input
        type="text"
@@ -54,8 +56,8 @@
       <input
        type="text"
        name="tag"
-       >
-       <button type="submit">submit!</button>
+      >
+      <button type="submit">Submit!</button>
     </form>
   </div>
   <main id="main-container">
