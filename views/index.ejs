@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
@@ -25,16 +26,7 @@
   <script defer src="/scripts/likeRate.js"></script>
 </head>
 <body>
-  <nav>
-    <span><img id="logo" src="https://www.kadencewp.com/wp-content/uploads/2020/10/alogo-2.png"></span>
-    <a id="logo-link" href="/"><h1>Knowledge Nest</h1></a>
-    <div id="search">
-      <form method="GET" action="/search" id="search-form">
-        <button type="submit"><i class="fa fa-magnifying-glass"></i></button>
-        <input type="text" name="query" placeholder="Search...">
-      </form>
-    </div>
-  </nav>
+  <%- include('partials/_nav') %>
   <div id="dropdown">dropdown icon</div>
   <div id="form-container">
     <form method="post" action="/add-resource" id="resource-form">

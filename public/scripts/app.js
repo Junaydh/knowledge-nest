@@ -16,7 +16,7 @@ const createResourceElement = function(data) {
           <span id="resource-id">${data.id}</span>
         </header>
         <h3 class="resource-title"><a href="/egg/${data.id}">${data.title}</a></h3>
-        <div class="resource-description">description</div>
+        <div class="resource-description">${data.description}</div>
         <footer>
           <div class="resource-tag-container" id="${data.id}">
           </div>
@@ -80,4 +80,9 @@ const fetchTags = function() {
 
 $(document).ready(() => {
   fetchResources();
+
+  $('#dropdown').on('click', function() {
+    $('#form-container').slideToggle();
+    });
+
 })
