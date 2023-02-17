@@ -14,9 +14,7 @@ $(() => {
       const $likedBtn = $('#liked-btn');
       $likedBtn.addClass('greyed-out');
 
-      console.log('RESPONSE:', response);
-
-     for (const resource of response) {
+      for (const resource of response) {
         const $returnValue =
           $(`<article class="myresource">
             <header class="owned-resources">
@@ -65,10 +63,10 @@ $(() => {
 
       console.log('RESPONSE:', response);
 
-    for (const resource of response) {
-      const $returnValue =
-        $(`<article class="myresource">
-          <header class="owned-resources">
+      for (const resource of response) {
+        const $returnValue =
+          $(`<article class="myresource">
+            <header class="owned-resources">
             <div id="resource-img">
               <img src="${resource.img_url}"></img>
             </div>
