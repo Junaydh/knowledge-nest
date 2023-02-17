@@ -28,10 +28,10 @@ $(() => {
           ${comment.text}
         </div>
         <footer class="comment-footer">
-          <span class="comment-date">${timeago.format(comment.created_at)}</span>
+          <!--<span class="comment-date">${timeago.format(comment.created_at)}--></span>
         </footer>
       </article>`);
-      $commentList.append($comment);
+      $commentList.prepend($comment);
 
     }
   })
