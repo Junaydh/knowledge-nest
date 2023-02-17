@@ -41,6 +41,32 @@ $(() => {
     res.send(err);
   });
 
+
+  $('#new-comment-form').submit( function(event) {
+
+    event.preventDefault();
+
+
+    //text area words input
+    var text = $('#comment-post-text').val();
+
+    if (text.length > 0) {
+      $('.new-comment').css('border', '1px solid #e1e1e1')
+      console.log(text)
+    } else {
+      $('.new-comment').css('border', '3px solid #ff0000')
+      return;
+    }
+
+    $.post(this.action, {text, userID: 1}, (data, textStatus) => {
+      console.log({data, textStatus})
+    })
+
+    //remove text
+    $('#comment-post-text').val("");
+  })
+
+
 });
 
       // const $returnValue =
