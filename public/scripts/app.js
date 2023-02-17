@@ -1,6 +1,9 @@
 // Client facing scripts here
 
 const createResourceElement = function(data) {
+  if (!data.average_rating) {
+    data.average_rating = 'None';
+  }
   const $link = `
     <section class="resource-container">
     <article class="resource-listing">
@@ -10,7 +13,7 @@ const createResourceElement = function(data) {
       <section class="resource-details">
         <header>
           <a class="resource-link" href="${data.resource_url}">Click here to go to link!</a>
-          <div class="resource-rating">${data.average_rating}/5</div>
+          <div class="resource-rating">${Math.round(data.avg_rating)}/5</div>
         </header>
         <h3 class="resource-title"><a href="/egg/${data.id}">${data.title}</a></h3>
         <div class="resource-description">description</div>
@@ -41,7 +44,6 @@ const renderResources = function(resources) {
 }
 
 const renderTags = function(tags) {
-  console.log(tags);
   for (const tag of tags) {
     let id = tag.resource_id;
     let container = $(`#${id}`);
