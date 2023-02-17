@@ -46,6 +46,7 @@ const tagApiRoutes = require('./routes/tags-api');
 const profileApiRoutes = require ('./routes/profile-api');
 const profileRoutes = require('./routes/profile');
 const addResourceRoutes = require('./routes/addResource');
+const likeRateApiRoutes = require('./routes/likeRate-api');
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
@@ -61,6 +62,7 @@ app.use('/register', registrationRoutes);
 app.use('/api/profile', profileApiRoutes)
 app.use('/profile', profileRoutes);
 app.use('/add-resource', addResourceRoutes);
+app.use ('/api/likesratings', likeRateApiRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
