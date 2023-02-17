@@ -29,7 +29,7 @@
   </nav>
   <div id="dropdown">dropdown icon</div>
   <div id="form-container">
-    <form method="post" action="/add-resource">
+    <form method="post" action="/add-resource" id="form">
       <label for="title">Title: </label>
       <input
        type="text"
@@ -49,6 +49,12 @@
        type="text"
        name="img_url"
       >
+      <label for="tag">Tag: </label>
+      <input
+       type="text"
+       name="tag"
+       >
+       <button type="submit">submit!</button>
     </form>
   </div>
   <main id="main-container">
