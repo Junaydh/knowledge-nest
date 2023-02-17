@@ -2,6 +2,7 @@
   max-width: 500px;
   height: auto;
   border-radius: 5%;
+  padding: 5px;
 }
 
 .resource-container {
@@ -56,6 +57,7 @@
   gap: 10px;
   justify-content: right;
   width: 100%;
+  cursor: pointer;
 }
 
 #icons .fa-heart:hover {
@@ -63,6 +65,10 @@
   color: red;
   filter: drop-shadow(0 0 2px);
 }
+
+// .liked {
+//   color:pink;
+// }
 
 #icons .fa-comment:hover {
   background-clip: content-box;
