@@ -3,7 +3,9 @@ const router  = express.Router();
 const likeRatingApiQueries = require('../db/queries/likeRate');
 
 router.get('/', (req, res) => {
-  likeRatingApiQueries.countLikes()
+  console.log('likeRateApiRoutes: GET /');
+  const resourceId = req.body.resourceId;
+  likeRatingApiQueries.countLikes(resourceId)
   .then(rows => {
     res.json(rows);
   })

@@ -1,11 +1,14 @@
 const db = require('../connection');
 
-const countLikes = () => {
+const countLikes = (resourceId) => {
   const queryString = `SELECT COUNT(likes.*)
-  FROM likes;`
+  FROM likes
+  WHERE likes.resource_id = $1;`
+
+  const queryParams = [resourceId];
 
   return db
-  .query(queryString)
+  .query(queryString, queryParams)
   .then((data) => {
     return data.rows[0].count;
   })
