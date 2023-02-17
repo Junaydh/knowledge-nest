@@ -17,3 +17,13 @@ VALUES (3, 1, 'Owner id 3 commented on resourse id 1');
 
 INSERT INTO comments (owner_id, resource_id, comment)
 VALUES (3, 2, 'Owner id 3 commented on resourse id 2');
+
+INSERT INTO comments (owner_id, resource_id, comment)
+VALUES (1, 3, 'Owner id 2 commented on resourse id 3');
+
+INSERT INTO comments (owner_id, resource_id, comment)
+VALUES (2, 3, 'Owner id 3 commented on resourse id 3');
+
+INSERT INTO comments (owner_id, resource_id, comment)
+VALUES (3, 3, 'Owner id 3 commented on resourse id 3');
+

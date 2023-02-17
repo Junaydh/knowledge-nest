@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const db = require('../db/connection');
 const { getResources } = require('../db/queries/resources');
-const resourceCommentQueries = require('../db/queries/get-resource-comments');
+const resourceCommentQueries = require('../db/queries/comments');
 
 router.get('/', (req, res) => {
   getResources().then(rows => {

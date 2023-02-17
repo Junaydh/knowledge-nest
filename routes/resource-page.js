@@ -8,13 +8,14 @@
     const express = require('express');
     const router  = express.Router();
     const resourceQueries = require('../db/queries/user-resources');
-    
+    const intertCommentIntoDB = require('../db/queries/comments');
+
     router.get('/:resourceID', (req, res) => {
       const resourceID = req.params.resourceID;
       resourceQueries.getUserResource(resourceID)
-      .then(resources => {
-        console.log(resources)
-        res.render('resource-page', { resources });
+      .then(resource => {
+        console.log(resource)
+        res.render('resource-page', { resource });
       })
       .catch (err => {
         res
@@ -23,6 +24,33 @@
       });
       //res.render('resource-page');
     });
+
+    router.post('/:resourceID/comment-submit', (req, res) => {
+
+      //inserts comment to resources comments
+
+      const resourceID = req.params.resourceID;
+      const text = req.body.text;
+      const userID = req.session.user_id;
+      console.log("post req.session: ", req.session)
+      if (!text) {
+        res.status(400).json({ error: 'invalid request: no data in POST body'});
+        return;
+      }
+
+      intertCommentIntoDB.insertComment(userID, resourceID, text)
+      .then(id => {
+        console.log("response:", id)
+        res.sendStatus(201);
+      })
+      .catch (err => {
+        res
+          .status(500)
+          .json({ error: err.message })
+      });
+
+      //res.json({text, userID})
+    })
 
     // router.get('/:resourceid', (req, res) => {
     //   //console.log("resource-page-get")

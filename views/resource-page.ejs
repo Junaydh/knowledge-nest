@@ -31,7 +31,7 @@
 <html lang="en">
 
 <head>
-  <title><%= resources[0].title %></title>
+  <title><%= resource.title %></title>
 
   <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -61,8 +61,6 @@
   <div id="dropdown"></div>
   <main id="resource-containers">
 
-    <% for(let resource of resources) {%>
-
     <section class="resource-container">
       <article class="resource-listing">
         <section class="resource-preview-image">
@@ -83,10 +81,22 @@
       </article>
     </section>
 
-    <% } %>
+    <section class="new-comment">
+      <div class="text-error">
+        <!-- Text box for creating a new tweet form-->
+      </div>
+      <form action="/egg/<%= resource.id %>/comment-submit" method="POST" id="new-comment-form">
+        <textarea name="text" id="comment-post-text"></textarea>
+        <div class="new-comment-footer">
+          <button id="comment-submit-button" type="submit">Comment</button>
+        </div>
+      </form>
+    </section>
 
     <section id="comments-container"></section>
   </main>
+
+
 </body>
 
 </html>

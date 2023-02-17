@@ -26,11 +26,6 @@ app.use(
   })
 );
 app.use(express.static('public'));
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1', 'key2'],
-  maxAge: 60000
-}));
 
 app.use(cookieSession({
   name: 'session',
@@ -77,6 +72,7 @@ app.get('/login/:id', (req, res) => {
  });
 
 app.get('/', (req, res) => {
+  console.log("Session:", req.session)
   res.render('index');
 });
 
