@@ -19,19 +19,19 @@ Some key features include:
 
 ## Dependencies
 
-     - bcrypt
-     - bootstrap
-     - chalk
-     - cookie-session
-     - dotenv
-     - ejs
-     - express
-     - morgan
-     - pg
-     - sass"
-     - Node 10.x or above
-     - NPM 5.x or above
-     - PG 6.x
+  - bcrypt
+  - bootstrap
+  - chalk
+  - cookie-session
+  - dotenv
+  - ejs
+  - express
+  - morgan
+  - pg
+  - sass"
+  - Node 10.x or above
+  - NPM 5.x or above
+  - PG 6.x
 
 
 ## Getting Started
