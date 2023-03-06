@@ -3,7 +3,7 @@ Knowledge Nest
 
 ##Final Product
 
-Knowledge Nest is a variation of the Resource Wall project. 
+Knowledge Nest is an education hub with a structure reminiscent of Pinterest. allowing users to keep track of their educational resources via a feed, posting, liking and commenting on resources. 
 
 It uses a Postgres database on the backend which it actively queries.
 
